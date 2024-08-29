@@ -30,9 +30,10 @@ export const TrendingCard = () => {
 
   return (
     <div className="flex">
-      {cards.map((card) => {
+      {cards.map((card, index) => {
         return (
           <div
+            key={card + index}
             style={{
               backgroundImage: `url(${card.image})`,
               backgroundSize: "cover",
