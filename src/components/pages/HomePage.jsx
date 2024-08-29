@@ -1,5 +1,7 @@
+import { Blogpost } from "../blog-post/BlogPost";
 import { Carousel } from "../carousel/Carousel";
 import { Header } from "../header/Header";
+import { Trending } from "../trending/Trending";
 import { TrendingCard } from "../trending/TrendingCard";
 
 export const Homepage = () => {
@@ -7,7 +9,8 @@ export const Homepage = () => {
     <div className="">
       <Header />
       <Carousel />
-      <TrendingCard />
+      <Trending />
+      <Blogpost />
     </div>
   );
 };
