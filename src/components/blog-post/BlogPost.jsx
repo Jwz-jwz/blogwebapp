@@ -5,7 +5,7 @@ import { BlogHeader } from "./BlogHeader";
 export const Blogpost = () => {
   return (
     <div className="w-full flex mt-[100px] justify-center">
-      <div className="container p-8 flex flex-col gap-8">
+      <div className="container p-8 flex flex-col gap-8 max-w-7xl">
         <SectionName name={"All Blog Post"} />
         <div className="flex justify-between">
           <div className="flex gap-[20px]">
@@ -32,6 +32,7 @@ export const Blogpost = () => {
             <BlogHeader text={"View all"} />
           </button>
         </div>
+
         <BlogCard />
       </div>
     </div>

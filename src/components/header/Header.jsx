@@ -5,7 +5,7 @@ import { SmallText } from "./SmallText";
 export const Header = () => {
   return (
     <div className="w-full flex justify-center">
-      <div className="container fixed z-50 bg-white md:py-[32px] flex justify-between px-[32px]">
+      <div className="container fixed z-50 bg-white md:py-[32px] flex justify-between px-[32px] max-w-7xl">
         <MetaBlog />
         <div className="flex gap-[40px] items-center justify-between">
           <button>
