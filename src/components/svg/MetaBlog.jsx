@@ -1,6 +1,6 @@
 export const MetaBlog = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center hover:cursor-pointer hover:scale-110 transition-all ease-linear duration-300">
       <svg
         width="158"
         height="36"

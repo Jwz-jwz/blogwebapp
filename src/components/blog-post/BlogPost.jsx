@@ -1,6 +1,7 @@
 import { SectionName } from "../usedinall/SectionName";
 import { BlogCard } from "./BlogCard";
 import { BlogHeader } from "./BlogHeader";
+import { LoadMore } from "./LoadMore";
 
 export const Blogpost = () => {
   return (
@@ -34,6 +35,9 @@ export const Blogpost = () => {
         </div>
 
         <BlogCard />
+        <button className="flex justify-center">
+          <LoadMore />
+        </button>
       </div>
     </div>
   );
