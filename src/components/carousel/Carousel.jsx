@@ -50,7 +50,7 @@ export const Carousel = () => {
   };
 
   return (
-    <div className="w-full flex justify-center ">
+    <div className="w-full hidden md:flex justify-center ">
       <div className=" container mt-[100px] flex  flex-col gap-[10px] px-8 max-w-7xl ">
         <div
           className="h-[600px] flex justify-start items-end pl-[5px] pb-[5px] transition-all ease-linear duration-300"
@@ -64,7 +64,7 @@ export const Carousel = () => {
             style={{
               background: `${slides[currentIndex].cardcolor}`,
             }}
-            className=" w-[35%] flex flex-col   border-[1px] border-[var(--bordercolor)] rounded-[12px]  bg-[var(--textwhite)] p-[40px]"
+            className=" w-[50%] flex flex-col   border-[1px] border-[var(--bordercolor)] rounded-[12px]  bg-[var(--textwhite)] p-[40px]"
           >
             <div>
               <button className="px-[10px] py-[4px] rounded-[6px] border-[1px] border-[var(--bordercolor)] text-[14px] leading-[20px] font-[500] text-[var(--textwhite)] bg-[var(--bgblue)]">
@@ -72,7 +72,7 @@ export const Carousel = () => {
               </button>
             </div>
             <div className="flex flex-col gap-[8px] mt-[16px]">
-              <span className="text-[36px] leading-[40px] font-[600]">
+              <span className="text-[14px] md:text-[36px] leading-[40px] font-[600]">
                 {slides[currentIndex].text}
               </span>
             </div>

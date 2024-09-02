@@ -65,7 +65,7 @@ export const BlogCard = () => {
       content:
         " The Impact of Technology on the Workplace: How Technology is Changing",
       date: <Date date={"August 20, 2022"} />,
-    },
+    }, 
   ];
 
   return (

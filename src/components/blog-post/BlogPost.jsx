@@ -9,7 +9,7 @@ export const Blogpost = () => {
       <div className="container p-8 flex flex-col gap-8 max-w-7xl">
         <SectionName name={"All Blog Post"} />
         <div className="flex justify-between">
-          <div className="flex gap-[20px]">
+          <div className="hidden md:flex gap-[20px]">
             <button className="text-[#D4A373]">
               <BlogHeader text={"All"} />
             </button>

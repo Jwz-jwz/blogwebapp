@@ -33,7 +33,7 @@ export const TrendingCard = () => {
   ];
 
   return (
-    <div className=" flex justify-between ">
+    <div className="flex flex-wrap gap-[20px] md:flex justify-between ">
       {cards.map((card, index) => {
         return (
           <div
