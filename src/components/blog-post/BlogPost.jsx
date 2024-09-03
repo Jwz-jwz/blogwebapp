@@ -4,7 +4,7 @@ import { BlogCard } from "./BlogCard";
 import { BlogHeader } from "./BlogHeader";
 import { LoadMore } from "./LoadMore";
 
-export const Blogpost = ({ url, tag, description }) => {
+export const Blogpost = ({}) => {
   const [articles, setArticles] = useState([]);
 
   const fetchData = () => {
@@ -16,6 +16,7 @@ export const Blogpost = ({ url, tag, description }) => {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div className="w-full flex mt-[100px] justify-center">
       <div className="container p-8 flex flex-col gap-8 max-w-7xl">
@@ -46,18 +47,19 @@ export const Blogpost = ({ url, tag, description }) => {
           </button>
         </div>
         <div className="flex flex-wrap justify-between gap-[20px]">
-          {articles.map((article) => {
+          {articles.map((article, index) => {
             return (
-              <BlogCard
-                url={article.cover_image}
-                tag={article.tag_list[1]}
-                description={article.description}
-                time={article.published_at}
-              />
+              <div key={article + index}>
+                <BlogCard
+                  url={article.cover_image}
+                  tag={article.tag_list[0]}
+                  description={article.description}
+                  time={article.published_at}
+                />
+              </div>
             );
           })}
         </div>
-        {/* <BlogCard url={url} tag={tag} description={description} /> */}
         <button className="flex justify-center">
           <LoadMore />
         </button>
