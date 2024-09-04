@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CloseSvg } from "../svg/CloseSvg";
 import { MetaBlog } from "../svg/MetaBlog";
 import { SearchIcon } from "../svg/SearchIcon";
@@ -20,19 +21,19 @@ export const Menu = ({ isShow, changeFunction }) => {
           </button>
         </div>
         <button className="">
-          <a href="./">
+          <Link href="./">
             <SmallText text={"Home"} />
-          </a>
+          </Link>
         </button>
         <button>
-          <a href="./blog-list">
+          <Link href="./blog-list">
             <SmallText text={"Blog"} />
-          </a>
+          </Link>
         </button>
         <button>
-          <a href="./contact-us">
+          <Link href="./contact-us">
             <SmallText text={"Contact"} />
-          </a>
+          </Link>
         </button>
       </div>
       <div className=" container flex justify-end rounded-[5px] py-[8px] pr-[8px] pl-[16px] gap-[12px] bg-[#F4F4F5]">

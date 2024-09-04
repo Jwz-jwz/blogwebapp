@@ -15,7 +15,7 @@ export const Homepage = () => {
     <div className="">
       <Menu isShow={isShow} changeFunction={showHandle} />
       <Header changeFunction={showHandle} />
-      <Carousel />
+      {/* <Carousel /> */}
       <Trending />
       <Blogpost />
       <Footer />

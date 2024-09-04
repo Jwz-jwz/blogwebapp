@@ -6,16 +6,32 @@ import { LoadMore } from "./LoadMore";
 
 export const Blogpost = ({}) => {
   const [articles, setArticles] = useState([]);
+  const [tag, setTag] = useState("");
 
   const fetchData = () => {
-    fetch("https://dev.to/api/articles?per_page=9")
+    fetch(`https://dev.to/api/articles?per_page=9&tag=${tag}`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [tag]);
+
+  // const filterArticles = (cat) => {
+  //   const newArticles = articles.filter(
+  //     (article) => article.tag_list[0] === cat
+  //   );
+  //   setArticles(newArticles);
+  // };
+  const handleChange = (newtag) => {
+    setTag(newtag);
+    <BlogCard tag={newtag} />;
+    console.log(newtag);
+  };
+
+  const filteredTag = articles.filter((article) => article.tag_list === tag);
+  console.log(filteredTag);
 
   return (
     <div className="w-full flex mt-[100px] justify-center">
@@ -26,20 +42,20 @@ export const Blogpost = ({}) => {
             <button className="text-[#D4A373]">
               <BlogHeader text={"All"} />
             </button>
-            <button>
-              <BlogHeader text={"Design"} />
+            <button onClick={() => handleChange("coding")}>
+              <BlogHeader text={"coding"} />
             </button>
             <button>
-              <BlogHeader text={"Travel"} />
+              <BlogHeader text={"meta"} />
             </button>
             <button>
-              <BlogHeader text={"Fashion"} />
+              <BlogHeader text={"news"} />
             </button>
             <button>
-              <BlogHeader text={"Technology"} />
+              <BlogHeader text={"neonchallenge"} />
             </button>
             <button>
-              <BlogHeader text={"Brending"} />
+              <BlogHeader text={"database"} />
             </button>
           </div>
           <button>

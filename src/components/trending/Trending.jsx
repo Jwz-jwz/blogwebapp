@@ -18,7 +18,7 @@ export const Trending = () => {
     <div className="w-full flex justify-center mt-[100px]">
       <div className="container p-8 flex flex-col gap-[30px] max-w-7xl">
         <SectionName name={"Trending"} />
-        <div className="flex justify-between">
+        <div className="md:flex justify-between">
           {articles.map((article, index) => {
             return (
               <div key={article + index}>
