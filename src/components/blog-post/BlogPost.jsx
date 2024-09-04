@@ -3,80 +3,52 @@ import { SectionName } from "../usedinall/SectionName";
 import { BlogCard } from "./BlogCard";
 import { BlogHeader } from "./BlogHeader";
 import { LoadMore } from "./LoadMore";
+import Link from "next/link";
 
 export const Blogpost = ({}) => {
   const [articles, setArticles] = useState([]);
   const [tag, setTag] = useState("");
+  const [perpage, setPerpage] = useState(9);
 
   const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=9&tag=${tag}`)
+    fetch(`https://dev.to/api/articles?per_page=${perpage}&tag=${tag}`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
 
   useEffect(() => {
     fetchData();
-  }, [tag]);
+  }, [tag, perpage]);
 
-  // const filterArticles = (cat) => {
-  //   const newArticles = articles.filter(
-  //     (article) => article.tag_list[0] === cat
-  //   );
-  //   setArticles(newArticles);
-  // };
   const handleChange = (newtag) => {
     setTag(newtag);
-    <BlogCard tag={newtag} />;
-    console.log(newtag);
   };
-
-  const filteredTag = articles.filter((article) => article.tag_list === tag);
-  console.log(filteredTag);
+  const handleLoadmore = () => {
+    setPerpage(perpage + 3);
+  };
+  console.log(perpage);
 
   return (
     <div className="w-full flex mt-[100px] justify-center">
       <div className="container p-8 flex flex-col gap-8 max-w-7xl">
         <SectionName name={"All Blog Post"} />
-        <div className="flex justify-between">
-          <div className="hidden md:flex gap-[20px]">
-            <button className="text-[#D4A373]">
-              <BlogHeader text={"All"} />
-            </button>
-            <button onClick={() => handleChange("coding")}>
-              <BlogHeader text={"coding"} />
-            </button>
-            <button>
-              <BlogHeader text={"meta"} />
-            </button>
-            <button>
-              <BlogHeader text={"news"} />
-            </button>
-            <button>
-              <BlogHeader text={"neonchallenge"} />
-            </button>
-            <button>
-              <BlogHeader text={"database"} />
-            </button>
-          </div>
-          <button>
-            <BlogHeader text={"View all"} />
-          </button>
-        </div>
+        <BlogHeader handleChange={handleChange} />
+
         <div className="flex flex-wrap justify-between gap-[20px]">
           {articles.map((article, index) => {
             return (
-              <div key={article + index}>
+              <Link href={`/blog-list/${article.id}`} key={article + index}>
                 <BlogCard
                   url={article.cover_image}
-                  tag={article.tag_list[0]}
+                  tag={article.tag_list}
                   description={article.description}
                   time={article.published_at}
                 />
-              </div>
+              </Link>
             );
           })}
         </div>
-        <button className="flex justify-center">
+        <button onClick={handleLoadmore} className="flex justify-center">
           <LoadMore />
         </button>
       </div>

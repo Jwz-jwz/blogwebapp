@@ -19,8 +19,8 @@ export const LeftSumIcon = () => {
         <path
           d="M23.5 27L16 19.5L23.5 12"
           stroke="black"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </div>

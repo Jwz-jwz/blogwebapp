@@ -19,8 +19,8 @@ export const RightSumIcon = () => {
         <path
           d="M16 12L23.5 19.5L16 27"
           stroke="black"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </div>

@@ -1,24 +1,21 @@
 import { SmallTextGrey } from "../usedinall/SmalTextGrey";
 import { SinglePagetext } from "./SinglePagetext";
 
-export const SingleMain = () => {
+export const SingleMain = ({ header, propic, name, date, coverpic }) => {
   return (
     <div className="w-full flex justify-center mt-[200px] ">
       <div className="container flex flex-col gap-8 max-w-7xl px-[240px]">
         <div className="flex flex-col gap-5">
-          <h1 className="text-[36px] font-[600] leading-[40px]">
-            The Impact of Technology on the Workplace: How Technology is
-            Changing
-          </h1>
+          <h1 className="text-[36px] font-[600] leading-[40px]">{header}</h1>
           <div className="flex gap-[24px]">
-            <img src="./profile.png" alt="" />
+            <img src={propic} alt="" />
 
-            <SmallTextGrey text={"Tracey Wilson"} />
-            <SmallTextGrey text={"August 20, 2022"} />
+            <SmallTextGrey text={name} />
+            <SmallTextGrey text={date} />
           </div>
         </div>
         <div>
-          <img src="./sqaure.png" alt="" />
+          <img src={coverpic} alt="" />
         </div>
         <div className="flex flex-col gap-[30px]">
           <SinglePagetext

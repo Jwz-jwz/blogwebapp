@@ -5,6 +5,7 @@ import { Footer } from "../footer/Footer";
 import { Header } from "../header/Header";
 import { Menu } from "../header/Menu";
 import { Trending } from "../trending/Trending";
+import { CarouselTest } from "../carousel/CarouselTest";
 
 export const Homepage = () => {
   const [isShow, setIsShow] = useState(false);
@@ -15,6 +16,7 @@ export const Homepage = () => {
     <div className="">
       <Menu isShow={isShow} changeFunction={showHandle} />
       <Header changeFunction={showHandle} />
+      <CarouselTest />
       {/* <Carousel /> */}
       <Trending />
       <Blogpost />

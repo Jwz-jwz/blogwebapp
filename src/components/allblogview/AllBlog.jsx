@@ -5,16 +5,22 @@ import { AllBlogCard } from "./AllBlogCard";
 
 export const AllBlog = ({}) => {
   const [articles, setArticles] = useState([]);
+  const [perpage, setPerpage] = useState(12);
 
   const fetchData = () => {
-    fetch("https://dev.to/api/articles?per_page=12")
+    fetch(`https://dev.to/api/articles?per_page=${perpage}`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [perpage]);
+
+  const handleLoadmore = () => {
+    setPerpage(perpage + 3);
+  };
+
   return (
     <div className="w-full flex mt-[100px] justify-center">
       <div className="container p-8 flex flex-col gap-12 max-w-7xl">
@@ -35,7 +41,7 @@ export const AllBlog = ({}) => {
             );
           })}
         </div>
-        <button className="flex justify-center">
+        <button onClick={handleLoadmore} className="flex justify-center">
           <LoadMore />
         </button>
       </div>

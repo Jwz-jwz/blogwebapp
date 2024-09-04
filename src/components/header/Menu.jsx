@@ -13,9 +13,9 @@ export const Menu = ({ isShow, changeFunction }) => {
     >
       <div className="container flex flex-col items-start gap-[20px] ">
         <div className="container flex justify-between">
-          <a href="./">
+          <Link href="./">
             <MetaBlog />
-          </a>
+          </Link>
           <button onClick={changeFunction}>
             <CloseSvg />
           </button>
