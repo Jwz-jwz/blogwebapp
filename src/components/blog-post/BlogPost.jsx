@@ -22,11 +22,11 @@ export const Blogpost = ({}) => {
 
   const handleChange = (newtag) => {
     setTag(newtag);
+    // <BlogCard tag={setTag} />;
   };
   const handleLoadmore = () => {
     setPerpage(perpage + 3);
   };
-  console.log(perpage);
 
   return (
     <div className="w-full flex mt-[100px] justify-center">
@@ -37,12 +37,12 @@ export const Blogpost = ({}) => {
         <div className="flex flex-wrap justify-between gap-[20px]">
           {articles.map((article, index) => {
             return (
-              <Link href={`/blog-list/${article.id}`} key={article + index}>
+              <Link href={`/blog-list/${article?.id}`} key={article + index}>
                 <BlogCard
-                  url={article.cover_image}
-                  tag={article.tag_list}
-                  description={article.description}
-                  time={article.published_at}
+                  url={article?.cover_image}
+                  tag={article?.tag_list}
+                  description={article?.description}
+                  time={article?.published_at}
                 />
               </Link>
             );

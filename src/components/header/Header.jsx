@@ -8,22 +8,22 @@ export const Header = ({ changeFunction }) => {
   return (
     <div className="w-full flex justify-center ">
       <div className="container fixed z-50 bg-white md:py-[32px] flex justify-between px-[32px] max-w-7xl">
-        <Link href="./">
+        <Link href="/">
           <MetaBlog />
         </Link>
         <div className="hidden md:flex gap-[40px] items-center justify-between">
           <button className="">
-            <Link href="./">
+            <Link href="/">
               <SmallText text={"Home"} />
             </Link>
           </button>
           <button>
-            <Link href="./blog-list">
+            <Link href="/blog-list">
               <SmallText text={"Blog"} />
             </Link>
           </button>
           <button>
-            <Link href="./contact-us">
+            <Link href="/contact-us">
               <SmallText text={"Contact"} />
             </Link>
           </button>

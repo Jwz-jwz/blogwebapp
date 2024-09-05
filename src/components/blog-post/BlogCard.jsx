@@ -6,12 +6,16 @@ export const BlogCard = ({ url, tag, description, time }) => {
     <div className="flex flex-wrap justify-between gap-[20px]">
       <div className=" flex flex-col  w-[392px] gap-[16px] border-[1px] border-[#E8E8EA] p-4 rounded-xl">
         <div className="">
-          <img className="h-[240px] rounded-[6px]" src={url} alt="" />
+          <img
+            className="h-[240px] rounded-[6px] object-cover"
+            src={url}
+            alt=""
+          />
         </div>
         <div className="flex flex-col gap-[20px]">
           <div className="flex flex-col gap-4">
             <BlogTag tagname={tag} />
-            <div className="text-[24px] h-[84px] leading-[28px] font-[600] text-ellipsis overflow-hidden">
+            <div className="text-[24px]  leading-[28px] font-[600] line-clamp-3">
               {description}
             </div>
           </div>

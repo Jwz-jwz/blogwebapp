@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { SectionName } from "../usedinall/SectionName";
 import { TrendingCard } from "./TrendingCard";
+import Link from "next/link";
 
 export const Trending = () => {
   const [articles, setArticles] = useState([]);
@@ -21,13 +22,13 @@ export const Trending = () => {
         <div className="md:flex justify-between">
           {articles.map((article, index) => {
             return (
-              <div key={article + index}>
+              <Link href={`/blog-list/${article?.id}`} key={article + index}>
                 <TrendingCard
-                  image={article.cover_image}
-                  tag={article.tag_list[0]}
-                  description={article.description}
+                  image={article?.cover_image}
+                  tag={article?.tag_list[0]}
+                  description={article?.description}
                 />
-              </div>
+              </Link>
             );
           })}
         </div>

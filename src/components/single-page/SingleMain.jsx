@@ -1,33 +1,36 @@
+import { DateGenerate } from "../blog-post/DateGenerate";
 import { SmallTextGrey } from "../usedinall/SmalTextGrey";
 import { SinglePagetext } from "./SinglePagetext";
 
-export const SingleMain = ({ header, propic, name, date, coverpic }) => {
+export const SingleMain = ({
+  header,
+  propic,
+  name,
+  date,
+  coverpic,
+  description,
+}) => {
   return (
     <div className="w-full flex justify-center mt-[200px] ">
-      <div className="container flex flex-col gap-8 max-w-7xl px-[240px]">
-        <div className="flex flex-col gap-5">
+      <div className="container flex flex-col gap-[32px] max-w-7xl px-[240px]">
+        <div className="flex flex-col gap-[20px]">
           <h1 className="text-[36px] font-[600] leading-[40px]">{header}</h1>
           <div className="flex gap-[24px]">
-            <img src={propic} alt="" />
+            <img
+              className="w-[28px] h-[28px] rounded-[28px]"
+              src={propic}
+              alt=""
+            />
 
             <SmallTextGrey text={name} />
-            <SmallTextGrey text={date} />
+            <DateGenerate time={date} />
           </div>
         </div>
         <div>
-          <img src={coverpic} alt="" />
+          <img className="h-[462px] rounded-[12px]" src={coverpic} alt="" />
         </div>
         <div className="flex flex-col gap-[30px]">
-          <SinglePagetext
-            text={
-              "Traveling is an enriching experience that opens up new horizons, exposes us to different cultures, and creates memories that last a lifetime. However, traveling can also be stressful and overwhelming, especially if you don't plan and prepare adequately. In this blog article, we'll explore tips and tricks for a memorable journey and how to make the most of your travels."
-            }
-          />
-          <SinglePagetext
-            text={
-              "One of the most rewarding aspects of traveling is immersing yourself in the local culture and customs. This includes trying local cuisine, attending cultural events and festivals, and interacting with locals. Learning a few phrases in the local language can also go a long way in making connections and showing respect."
-            }
-          />
+          <SinglePagetext text={description} />
         </div>
         <div>
           <h1 className="text-[24px] leading-[28px] font-[600]">

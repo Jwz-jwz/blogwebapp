@@ -18,17 +18,17 @@ export const SinglePage = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(article);
 
   return (
     <div>
       <Header />
       <SingleMain
-        header={article.title}
-        propic={article.user.profile_image}
-        name={article.user.name}
-        date={article.published_at}
-        coverpic={article.cover_image}
+        header={article?.title}
+        propic={article?.user?.profile_image_90}
+        name={article?.user?.name}
+        date={article?.published_at}
+        coverpic={article?.cover_image}
+        description={article?.description}
       />
       <Footer />
     </div>

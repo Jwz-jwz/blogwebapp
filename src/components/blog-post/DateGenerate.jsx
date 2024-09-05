@@ -32,8 +32,10 @@ export const DateGenerate = ({ time }) => {
 
   return (
     <p className="text-[16px] font-[400] leading-[24px] text-[#97989F]">
-      {publishedDate.getFullYear()}-{generatMonth(publishedDate.getMonth())}-
-      {publishedDate.getDay()}
+      {generatMonth(publishedDate.getMonth())}
+      {`  `}
+      {publishedDate.getDay()}, {`  `}
+      {publishedDate.getFullYear()}
     </p>
   );
 };
