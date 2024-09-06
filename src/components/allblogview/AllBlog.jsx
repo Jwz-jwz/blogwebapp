@@ -29,7 +29,7 @@ export const AllBlog = ({}) => {
         <div className="flex flex-wrap justify-between gap-[20px]">
           {articles.map((article, index) => {
             return (
-              <Link href={`/blog-list/${article?.id}`} key={article + index}>
+              <Link href={`/blog-list/${article?.id}`} key={article.id + index}>
                 <AllBlogCard
                   url={article?.cover_image}
                   tag={article?.tag_list[0]}

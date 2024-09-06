@@ -22,7 +22,7 @@ export const Trending = () => {
         <div className="md:flex justify-between">
           {articles.map((article, index) => {
             return (
-              <Link href={`/blog-list/${article?.id}`} key={article + index}>
+              <Link href={`/blog-list/${article?.id}`} key={article.id + index}>
                 <TrendingCard
                   image={article?.cover_image}
                   tag={article?.tag_list[0]}

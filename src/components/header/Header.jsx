@@ -13,21 +13,17 @@ export const Header = ({ changeFunction }) => {
           <MetaBlog />
         </Link>
         <div className="hidden md:flex gap-[40px] items-center justify-between">
-          <button className="">
-            <Link href="/">
-              <SmallText text={"Home"} />
-            </Link>
-          </button>
-          <button>
-            <Link href="/blog-list">
-              <SmallText text={"Blog"} />
-            </Link>
-          </button>
-          <button>
-            <Link href="/contact-us">
-              <SmallText text={"Contact"} />
-            </Link>
-          </button>
+          <Link href="/">
+            <SmallText text={"Home"} />
+          </Link>
+
+          <Link href="/blog-list">
+            <SmallText text={"Blog"} />
+          </Link>
+
+          <Link href="/contact-us">
+            <SmallText text={"Contact"} />
+          </Link>
         </div>
         <div className="hidden md:flex items-center rounded-[5px] justify-between py-[8px] pr-[8px] pl-[16px] gap-[12px] bg-[#F4F4F5]">
           <input
