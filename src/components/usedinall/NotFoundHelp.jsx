@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TagTrending } from "../trending/TagTrending";
 import { SmallTextGrey } from "./SmalTextGrey";
 
@@ -21,12 +22,12 @@ export const NotFoundHelp = () => {
           />
           <div>
             <button className="">
-              <a
+              <Link
                 className="px-[16px] py-[10px] text-[12px] font-[500] leading-[20px] rounded-[6px] text-white bg-[#4B6BFB]"
-                href="./"
+                href="/"
               >
                 Back to Home
-              </a>
+              </Link>
             </button>
           </div>
         </div>

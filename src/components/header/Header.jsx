@@ -3,6 +3,7 @@ import { MenuSvg } from "../svg/MenuSvg";
 import { MetaBlog } from "../svg/MetaBlog";
 import { SearchIcon } from "../svg/SearchIcon";
 import { SmallText } from "./SmallText";
+import { useEffect, useState } from "react";
 
 export const Header = ({ changeFunction }) => {
   return (
