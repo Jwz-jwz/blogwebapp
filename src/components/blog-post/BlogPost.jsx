@@ -4,6 +4,7 @@ import { BlogCard } from "./BlogCard";
 import { BlogHeader } from "./BlogHeader";
 import { LoadMore } from "./LoadMore";
 import Link from "next/link";
+import { BlogTag } from "./BlogTag";
 
 export const Blogpost = ({}) => {
   const [articles, setArticles] = useState([]);
@@ -19,12 +20,13 @@ export const Blogpost = ({}) => {
   useEffect(() => {
     fetchData();
   }, [tag, perpage]);
+  articles.tag_list;
 
   const handleChange = (newtag) => {
     setTag(newtag);
     // <BlogCard tag={setTag} />;
   };
-  const handleLoadmore = () => {
+  const handleLoadMore = () => {
     setPerpage(perpage + 3);
   };
 
@@ -40,7 +42,7 @@ export const Blogpost = ({}) => {
               <Link href={`/blog-list/${article?.id}`} key={article.id + index}>
                 <BlogCard
                   url={article?.cover_image}
-                  tag={article?.tag_list}
+                  tags={article?.tag_list}
                   description={article?.description}
                   time={article?.published_at}
                 />
@@ -48,7 +50,7 @@ export const Blogpost = ({}) => {
             );
           })}
         </div>
-        <button onClick={handleLoadmore} className="flex justify-center">
+        <button onClick={handleLoadMore} className="flex justify-center">
           <LoadMore />
         </button>
       </div>

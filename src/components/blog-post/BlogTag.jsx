@@ -1,3 +1,10 @@
+// export const toUpperCase = (name) => {
+//   const titles = name.map((title) => title.split(``));
+//   titles.forEach((title) => {
+//     title[0] = title[0].toUpperCase();
+//   });
+//   return titles.map((title) => title.join(``));
+// };
 export const BlogTag = ({ tagname }) => {
   return (
     <div>
