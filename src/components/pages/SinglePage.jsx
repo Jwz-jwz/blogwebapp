@@ -17,7 +17,7 @@ export const SinglePage = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [article]);
 
   return (
     <div>

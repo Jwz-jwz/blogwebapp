@@ -8,7 +8,7 @@ import { Trending } from "../trending/Trending";
 
 export const Homepage = () => {
   const [articles, setArticles] = useState([]);
-  const [datas, setDatas] = useState([]);
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const fetchDataCarousel = () => {
@@ -16,10 +16,12 @@ export const Homepage = () => {
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
+ 
 
   useEffect(() => {
     fetchDataCarousel();
   }, []);
+
 
   const prevSlide = () => {
     setCurrentIndex((currentIndex) =>

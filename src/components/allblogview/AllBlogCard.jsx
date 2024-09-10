@@ -21,6 +21,15 @@ export const AllBlogCard = ({
         </div>
         <div className="flex flex-col gap-[20px]">
           <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-wrap gap-[5px]">
+              {tags.map((tagsis, index) => {
+                return (
+                  <div key={index}>
+                    <BlogTag tagname={toUpperCase(tagsis)} />
+                  </div>
+                );
+              })}
+            </div> */}
             <BlogTag tagname={tag} />
             <div className="text-[24px] h-[84px] leading-[28px] font-[600] text-ellipsis overflow-hidden">
               {description}

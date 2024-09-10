@@ -9,3 +9,21 @@
   --textgrey: #97989f;
   --bgblue: #4b6bfb;
 }
+body {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: "auto";
+  font-weight: "weight";
+  font-style: "normal";
+}
+.singlepage {
+  font-family: "Source Serif 4", "serif";
+  font-optical-sizing: "auto";
+  font-weight: "weight";
+  font-style: "normal";
+}
+.footer {
+  font-family: "Plus Jakarta Sans", "sans-serif";
+  font-optical-sizing: "auto";
+  font-weight: "weight";
+  font-style: "normal";
+}

@@ -11,7 +11,7 @@ export const SingleMain = ({
   description,
 }) => {
   return (
-    <div className="w-full flex justify-center mt-[200px] ">
+    <div className="w-full flex justify-center mt-[200px] singlepage">
       <div className="container flex flex-col gap-[32px] max-w-7xl px-[240px]">
         <div className="flex flex-col gap-[20px]">
           <h1 className="text-[36px] font-[600] leading-[40px]">{header}</h1>

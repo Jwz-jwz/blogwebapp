@@ -7,7 +7,7 @@ import { SmallTextGrey } from "../usedinall/SmalTextGrey";
 
 export const Footer = () => {
   return (
-    <div className="w-full flex justify-center mt-[100px] bg-[#F6F6F7] border-t-[1px] border-t-[#E8E8EA]">
+    <div className="footer w-full flex justify-center mt-[100px] bg-[#F6F6F7] border-t-[1px] border-t-[#E8E8EA]">
       <div className="container max-w-7xl p-8 flex flex-col gap-[25px]">
         <div className="md:flex gap-[20px]">
           <div className="hidden md:flex flex-col gap-[24px] w-[27.5%]">

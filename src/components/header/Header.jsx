@@ -6,6 +6,19 @@ import { SmallText } from "./SmallText";
 import { useEffect, useState } from "react";
 
 export const Header = ({ changeFunction }) => {
+  // const [articles, setArticles] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState(``);
+  // const [filteredData, setFilteredData] = useState(articles);
+  // const fetchDataSearch = () => {
+  //   fetch(`https://dev.to/api/articles`)
+  //     .then((response) => response.json())
+  //     .then((data) => setArticles(data));
+  // };
+
+  // useEffect(() => {
+  //   fetchDataSearch();
+  // }, []);
+
   return (
     <div className="w-full flex justify-center ">
       <div className="container fixed z-50 bg-white md:py-[32px] flex justify-between px-[32px] max-w-7xl">
@@ -30,6 +43,8 @@ export const Header = ({ changeFunction }) => {
             placeholder="Search"
             className="hidden md:block border-none outline-none bg-[#F4F4F5]"
             type="text"
+            value={""}
+            onChange={(e) => handleChange(e.target.value)}
           />
           <button>
             <SearchIcon />

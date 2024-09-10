@@ -5,7 +5,7 @@ import { SmallTextGrey } from "./SmalTextGrey";
 
 export const ContactUsHelp = () => {
   return (
-    <div className="w-full flex justify-center mt-[200px]">
+    <div className="w-full flex justify-center mt-[200px] footer">
       <div className="container  flex flex-col items-center justify-center px-8 max-w-7xl">
         <div className="w-[63%] flex flex-col gap-[20px] py-[14px] px-[50px]">
           <h1 className="text-[36px] font-[600] leading-[40px]">Contact Us</h1>
