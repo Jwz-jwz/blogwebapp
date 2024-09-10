@@ -7,7 +7,7 @@ export const Trending = () => {
   const [articles, setArticles] = useState([]);
 
   const fetchData = () => {
-    fetch("https://dev.to/api/articles?per_page=4&&top=2")
+    fetch(`https://dev.to/api/articles?per_page=4&top=2`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
@@ -24,7 +24,7 @@ export const Trending = () => {
             return (
               <Link href={`/blog-list/${article?.id}`} key={article.id + index}>
                 <TrendingCard
-                  image={article?.cover_image}
+                  image={article?.cover_image || blog.png}
                   tag={article?.tag_list[0]}
                   description={article?.description}
                 />

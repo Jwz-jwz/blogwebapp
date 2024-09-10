@@ -6,18 +6,46 @@ import { SmallText } from "./SmallText";
 import { useEffect, useState } from "react";
 
 export const Header = ({ changeFunction }) => {
-  // const [articles, setArticles] = useState([]);
-  // const [searchTerm, setSearchTerm] = useState(``);
-  // const [filteredData, setFilteredData] = useState(articles);
-  // const fetchDataSearch = () => {
-  //   fetch(`https://dev.to/api/articles`)
-  //     .then((response) => response.json())
-  //     .then((data) => setArticles(data));
-  // };
+  const [articles, setArticles] = useState([]);
+  const [searchArticle, setSearchArticle] = useState("");
+  const filteredArticle = articles?.filter((article) =>
+    article?.title?.toLowerCase().includes(searchArticle)
+  );
 
-  // useEffect(() => {
-  //   fetchDataSearch();
-  // }, []);
+  const fetchDataSearch = () => {
+    fetch(`https://dev.to/api/articles?per_page=100`)
+      .then((response) => response.json())
+      .then((data) => setArticles(data));
+  };
+
+  useEffect(() => {
+    fetchDataSearch();
+  }, []);
+  const handleInputChange = (event) => {
+    setSearchArticle(event.target.value);
+  };
+
+  const SearchDropDown = ({ filteredArticle }) => {
+    return (
+      <div
+        className={`${
+          searchArticle ? "flex flex-col" : "hidden"
+        } absolute gap-[10px] bg-white`}
+      >
+        {filteredArticle?.map((artic, index) => {
+          return (
+            <Link
+              className="bg-gray-100 border border-green-300 rounded-xl w-[350px]"
+              key={artic.id + index}
+              href={`blog-list/${artic.id}`}
+            >
+              <div>{artic?.description}</div>
+            </Link>
+          );
+        })}
+      </div>
+    );
+  };
 
   return (
     <div className="w-full flex justify-center ">
@@ -38,14 +66,18 @@ export const Header = ({ changeFunction }) => {
             <SmallText text={"Contact"} />
           </Link>
         </div>
-        <div className="hidden md:flex items-center rounded-[5px] justify-between py-[8px] pr-[8px] pl-[16px] gap-[12px] bg-[#F4F4F5]">
-          <input
-            placeholder="Search"
-            className="hidden md:block border-none outline-none bg-[#F4F4F5]"
-            type="text"
-            value={""}
-            onChange={(e) => handleChange(e.target.value)}
-          />
+        <div className=" hidden md:flex items-center rounded-[5px] justify-between py-[8px] pr-[8px] pl-[16px] gap-[12px] bg-[#F4F4F5]">
+          <div className="relative">
+            <input
+              placeholder="Search"
+              className="hidden md:block border-none outline-none bg-[#F4F4F5]"
+              type="text"
+              onChange={handleInputChange}
+            />
+            {searchArticle && (
+              <SearchDropDown filteredArticle={filteredArticle} />
+            )}
+          </div>
           <button>
             <SearchIcon />
           </button>
