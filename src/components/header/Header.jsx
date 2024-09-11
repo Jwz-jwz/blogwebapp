@@ -8,12 +8,13 @@ import { useEffect, useState } from "react";
 export const Header = ({ changeFunction }) => {
   const [articles, setArticles] = useState([]);
   const [searchArticle, setSearchArticle] = useState("");
+
   const filteredArticle = articles?.filter((article) =>
     article?.title?.toLowerCase().includes(searchArticle)
   );
 
   const fetchDataSearch = () => {
-    fetch(`https://dev.to/api/articles?per_page=100`)
+    fetch(`https://dev.to/api/articles?per_page=10`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
@@ -23,28 +24,6 @@ export const Header = ({ changeFunction }) => {
   }, []);
   const handleInputChange = (event) => {
     setSearchArticle(event.target.value);
-  };
-
-  const SearchDropDown = ({ filteredArticle }) => {
-    return (
-      <div
-        className={`${
-          searchArticle ? "flex flex-col" : "hidden"
-        } absolute gap-[10px] bg-white`}
-      >
-        {filteredArticle?.map((artic, index) => {
-          return (
-            <Link
-              className="bg-gray-100 border border-green-300 rounded-xl w-[350px]"
-              key={artic.id + index}
-              href={`blog-list/${artic.id}`}
-            >
-              <div>{artic?.description}</div>
-            </Link>
-          );
-        })}
-      </div>
-    );
   };
 
   return (
@@ -74,9 +53,24 @@ export const Header = ({ changeFunction }) => {
               type="text"
               onChange={handleInputChange}
             />
-            {searchArticle && (
-              <SearchDropDown filteredArticle={filteredArticle} />
-            )}
+
+            <div
+              className={`${
+                searchArticle ? "flex flex-col" : "hidden"
+              } absolute gap-[10px] bg-white`}
+            >
+              {filteredArticle?.map((filtered, index) => {
+                return (
+                  <Link
+                    className="bg-gray-100 border border-green-300 rounded-xl w-[350px]"
+                    key={filtered.id + index}
+                    href={`/blog-list/${filtered.id}`}
+                  >
+                    <div>{filtered?.description}</div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
           <button>
             <SearchIcon />
