@@ -24,7 +24,7 @@ export const Trending = () => {
             return (
               <Link href={`/blog-list/${article?.id}`} key={article.id + index}>
                 <TrendingCard
-                  image={article?.cover_image || blog.png}
+                  image={article?.cover_image}
                   tag={article?.tag_list[0]}
                   description={article?.description}
                 />
