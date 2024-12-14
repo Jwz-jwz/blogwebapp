@@ -48,6 +48,7 @@ export const Header = ({ changeFunction }) => {
         <div className=" hidden md:flex items-center rounded-[5px] justify-between py-[8px] pr-[8px] pl-[16px] gap-[12px] bg-[#F4F4F5]">
           <div className="relative">
             <input
+              value={searchArticle}
               placeholder="Search"
               className="hidden md:block border-none outline-none bg-[#F4F4F5]"
               type="text"
@@ -62,7 +63,7 @@ export const Header = ({ changeFunction }) => {
               {filteredArticle?.map((filtered, index) => {
                 return (
                   <Link
-                    className="bg-gray-100 border border-green-300 rounded-xl w-[350px]"
+                    className="bg-gray-100 border border-green-300 rounded-xl w-[250px]"
                     key={filtered.id + index}
                     href={`/blog-list/${filtered.id}`}
                   >
